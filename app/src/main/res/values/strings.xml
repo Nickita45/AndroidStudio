@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Расписание</string>
+    <string name="calls_1">1 пара: 8:00-9:35</string>
+    <string name="calls_2">2 пара: 9:50-11:25</string>
+    <string name="calls_3">3 пара: 11:40-13:15</string>
+    <string name="calls_4">4 пара: 13:30-15:05</string>
+    <string name="action_cat_female">Кошка</string>
+    <string name="action_kitten">Котёнок</string>
+</resources>
