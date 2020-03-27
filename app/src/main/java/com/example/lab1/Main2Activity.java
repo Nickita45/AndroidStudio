@@ -45,6 +45,7 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent i = new Intent(Main2Activity.this,Calls.class);
+        Intent intentEvents = new Intent(Main2Activity.this,Events.class);
 
         switch (item.getItemId())
         {
@@ -53,7 +54,8 @@ public class Main2Activity extends AppCompatActivity {
                 break;
                 
             case R.id.events:
-                Toast.makeText(this, "Events!", Toast.LENGTH_SHORT).show();
+                startActivity(intentEvents);
+                //Toast.makeText(this, "Events!", Toast.LENGTH_SHORT).show();
                 break;
 
                 default:
