@@ -11,4 +11,6 @@
         android:id="@+id/timetable"/>
     <item android:title="Заметки"
         android:id="@+id/plans"/>
+    <item android:title="GridView"
+        android:id="@+id/item_gridview"/>
 </menu>
