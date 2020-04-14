@@ -1,16 +1,14 @@
 package com.example.lab1;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.lab1.adapters.GridViewElementAdapter;
 import com.example.lab1.dialogs.GridViewDialog;
 
 

@@ -13,4 +13,8 @@
         android:id="@+id/plans"/>
     <item android:title="GridView"
         android:id="@+id/item_gridview"/>
+    <item android:title="Lab4Async"
+        android:id="@+id/item_async"/>
+    <item android:title="Lab4AsyncAnimal"
+        android:id="@+id/item_animal"/>
 </menu>

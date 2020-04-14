@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThreatAsyncActivity">
+
+    <ImageView
+        android:id="@+id/imageViewAsync"
+        android:layout_width="286dp"
+        android:layout_height="450dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ProgressBar
+        android:id="@+id/progressBarAsync"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="130dp"
+        android:layout_height="82dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAsync"
+        app:layout_constraintVertical_bias="0.145" />
+
+    <Button
+        android:id="@+id/buttonAsync"
+        android:layout_width="133dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="24dp"
+        android:text="Download Picture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarAsync"
+        app:layout_constraintVertical_bias="0.738" />
+
+    <Button
+        android:id="@+id/archive_buttonAsync"
+        android:layout_width="130dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="32dp"
+        android:text="Archive"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toEndOf="@+id/buttonAsync"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarAsync"
+        app:layout_constraintVertical_bias="0.968" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,12 +7,12 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.lab1.adapters.FirstAdapter;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Events extends AppCompatActivity {
     String[] name = {"Vasya","Stas","Nikola"};

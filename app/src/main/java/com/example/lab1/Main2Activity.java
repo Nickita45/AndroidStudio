@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -65,6 +64,8 @@ public class Main2Activity extends AppCompatActivity {
         Intent i = new Intent(Main2Activity.this,Calls.class);
         Intent intentEvents = new Intent(Main2Activity.this,Events.class);
         Intent gridviewLab3 = new Intent(Main2Activity.this,GridViewActivity.class);
+        Intent asyncLab4 = new Intent(Main2Activity.this,ThreatAsyncActivity.class);
+        Intent asyncAnimalLab4 = new Intent(Main2Activity.this,AsyncAnimalsActivity.class);
 
         switch (item.getItemId())
         {
@@ -79,6 +80,13 @@ public class Main2Activity extends AppCompatActivity {
             case R.id.item_gridview:
                 startActivity(gridviewLab3);
                 break;
+            case R.id.item_async:
+                startActivity(asyncLab4);
+                break;
+            case R.id.item_animal:
+                startActivity(asyncAnimalLab4);
+                break;
+
                 default:
                     Toast.makeText(this, "Work in progress!", Toast.LENGTH_SHORT).show();
                     break;

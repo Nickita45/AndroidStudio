@@ -1,4 +1,4 @@
-package com.example.lab1;
+package com.example.lab1.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.lab1.R;
 
 import java.util.Random;
 
