@@ -37,6 +37,7 @@ public class Table_Activity extends AppCompatActivity {
     Calendar dateAndTime = Calendar.getInstance();
     EditText enteredDate;
     TextView view_ENTERED_DATE;
+    TableTimeAdapter adapter;
     DBHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +54,11 @@ public class Table_Activity extends AppCompatActivity {
             //get the value from the database in column 1
             //then add it to the ArrayList
             Log.d("SQL",usercurs.getString(0)+" "+usercurs.getString(3));
-            list.add(new TableEntity(usercurs.getInt(0),usercurs.getString(1),usercurs.getString(3)));
+            list.add(new TableEntity(usercurs.getInt(0),usercurs.getString(1),usercurs.getString(2),usercurs.getString(3)));
         }
 
         final ListView lvMain = (ListView) findViewById(R.id.list_table);
-        final TableTimeAdapter adapter = new TableTimeAdapter(this, list);
+        adapter = new TableTimeAdapter(this, list);
         lvMain.setAdapter(adapter);
         enteredDate = (EditText) findViewById(R.id.editText_table_date);
 
@@ -71,19 +72,17 @@ public class Table_Activity extends AppCompatActivity {
                 // Кнопка "Добавить"
                 EditText enteredName = (EditText) findViewById(R.id.editText_table_name);
                 //String view_ENTERED_DATE = "";
-                setInitialDateTime();
+                setInitialDateTime(false);
                 setDate(enteredDate);
 
 
-                String sendString = enteredDate.getText().toString();
+               /* String sendString = enteredDate.getText().toString();
                 ContentValues contentValues = new ContentValues();
                 contentValues.put("name", enteredName.getText().toString());
                 contentValues.put("datetable", sendString);
                 db1.insert("mytable",null,contentValues);
-
-
                 list.add(new TableEntity(enteredName.getText().toString(), sendString));
-                adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();*/
             }
         });
         lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -126,12 +125,28 @@ public class Table_Activity extends AppCompatActivity {
     }
 
 
-    private void setInitialDateTime() {
+    private void setInitialDateTime(boolean flag) {
 
-        enteredDate.setText(DateUtils.formatDateTime(this,
-                dateAndTime.getTimeInMillis(),
-                DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR
-                        | DateUtils.FORMAT_SHOW_TIME));
+
+            enteredDate.setText(DateUtils.formatDateTime(this,
+                    dateAndTime.getTimeInMillis(),
+                    DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR
+                            | DateUtils.FORMAT_SHOW_TIME));
+        if(flag==false) {
+
+        }
+        else{
+            EditText enteredName = (EditText) findViewById(R.id.editText_table_name);
+            EditText enteredDecription = (EditText) findViewById(R.id.editText_table_description);
+            SQLiteDatabase db1 = dbHelper.getWritableDatabase();
+            String sendString = enteredDate.getText().toString();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("name", enteredName.getText().toString());
+            contentValues.put("datetable", sendString);
+            db1.insert("mytable",null,contentValues);
+            list.add(new TableEntity(enteredName.getText().toString(), sendString,enteredDecription.getText().toString()));
+            adapter.notifyDataSetChanged();
+        }
 
     }
     public void setDate(View v) {
@@ -147,7 +162,7 @@ public class Table_Activity extends AppCompatActivity {
             dateAndTime.set(Calendar.YEAR, year);
             dateAndTime.set(Calendar.MONTH, monthOfYear);
             dateAndTime.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            setInitialDateTime();
+            setInitialDateTime(true);
         }
     };
 }

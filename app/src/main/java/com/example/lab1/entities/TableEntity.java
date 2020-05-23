@@ -10,13 +10,16 @@ public class TableEntity {
     public int id;
     public String name;
     public String date;
-    public TableEntity(int id,String name, String date){
+    public String description;
+    public TableEntity(int id,String name, String date,String description){
         this.id=id;
         this.name=name;
         this.date=date;
+        this.description=description;
     }
-    public TableEntity(String name, String date){
+    public TableEntity(String name, String date,String description){
         this.name=name;
         this.date=date;
+        this.description=description;
     }
 }

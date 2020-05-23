@@ -79,9 +79,11 @@ public class TableTimeAdapter extends BaseAdapter {
         dateView = (TextView) view.findViewById(R.id.textView_DateTableItem);
         TextView name = (TextView) view.findViewById(R.id.textView_NameTableItem);
         TextView description = (TextView) view.findViewById(R.id.textView_DescriptionTableItem);
+        TextView nameOriginal = (TextView) view.findViewById(R.id.textView_NameOriginalTableItem);
         //Log.d("AAAA",""+list.get(position).id);
         name.setText(""+list.get(position).id);
-        description.setText(list.get(position).name);
+        description.setText(list.get(position).description);
+        nameOriginal.setText(list.get(position).name);
         dateView.setText(list.get(position).date);
         //setInitialDateTime();
         return view;
