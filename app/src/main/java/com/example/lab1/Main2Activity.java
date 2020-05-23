@@ -66,7 +66,7 @@ public class Main2Activity extends AppCompatActivity {
         Intent gridviewLab3 = new Intent(Main2Activity.this,GridViewActivity.class);
         Intent asyncLab4 = new Intent(Main2Activity.this,ThreatAsyncActivity.class);
         Intent asyncAnimalLab4 = new Intent(Main2Activity.this,AsyncAnimalsActivity.class);
-
+        Intent tabletime = new Intent(Main2Activity.this,Table_Activity.class);
         switch (item.getItemId())
         {
             case R.id.calls:
@@ -86,7 +86,8 @@ public class Main2Activity extends AppCompatActivity {
             case R.id.item_animal:
                 startActivity(asyncAnimalLab4);
                 break;
-
+            case R.id.plans:
+                startActivity(tabletime);
                 default:
                     Toast.makeText(this, "Work in progress!", Toast.LENGTH_SHORT).show();
                     break;

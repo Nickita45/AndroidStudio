@@ -16,12 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AsyncAnimalsActivity"></activity>
+        <activity android:name=".Table_Activity"></activity>
+        <activity android:name=".AsyncAnimalsActivity" />
         <activity android:name=".ThreatAsyncActivity" />
         <activity android:name=".EventsIntent" />
         <activity
             android:name=".Events"
-            android:screenOrientation="landscape" />
+  />
         <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

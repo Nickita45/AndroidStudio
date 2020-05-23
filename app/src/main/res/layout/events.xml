@@ -8,18 +8,18 @@
     <ListView
         android:id="@+id/lvMain"
         android:layout_width="match_parent"
-        android:layout_height="218dp"/>
+        android:layout_height="427dp" />
 
     <Button
         android:id="@+id/events_button_add"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="128dp"
         android:text="Add" />
 
     <Button
         android:id="@+id/events_button_remove"
         android:layout_width="match_parent"
-        android:layout_height="53dp"
+        android:layout_height="128dp"
         android:text="REMOVE" />
 
 
