@@ -43,7 +43,14 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+//        db.execSQL("drop table classmates");
+        Log.d("AAa","DB WORK");
+        db.execSQL("create table classmates ("
+                + "id integer primary key autoincrement,"
+                + "name text,"
+                + "secondname text,"
+                + "otchestvo text,"
+                + "datetable text"+");");
     }
 
 }

@@ -48,7 +48,7 @@ public class Lab6Adapter extends BaseAdapter {
         TextView name = (TextView) view.findViewById(R.id.textView_classmates_name);
         TextView id = (TextView) view.findViewById(R.id.textView_classmates_id);
         TextView date = (TextView) view.findViewById(R.id.textView_classmates_data);
-        name.setText(list.get(position).fio);
+        name.setText(list.get(position).name+"|"+list.get(position).secondname+"|"+list.get(position).otchestvo);
         id.setText(""+list.get(position).id);
         date.setText(list.get(position).date);
         return view;

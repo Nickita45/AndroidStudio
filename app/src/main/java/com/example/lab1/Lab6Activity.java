@@ -28,9 +28,9 @@ public class Lab6Activity extends AppCompatActivity {
         setContentView(R.layout.activity_lab6);
         dbHelper = new DBHelper(this);
         final SQLiteDatabase db = dbHelper.getWritableDatabase();
-
+       // db.execSQL("drop table classmates");
        // dbHelper.addOneClassmates(db);
-
+        dbHelper.onUpgrade(db,1,2);
         arrayList=UpdateValue();
 
         Button button_list = (Button) findViewById(R.id.button_lab6_list);
@@ -53,15 +53,22 @@ public class Lab6Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Random r = new Random();
-                String fio="";
-                String alphabet = "QWERTYUIOPASDFGHJKLZXCVBNM";
+                String[] name= {"Nikita","John","Petya"};
+                String[] secondname= {"Petrov","Sidorov","Ovcharenko"};
+                String[] otchestvo= {"Stepanovich","Romanovich","Alexandrovich"};
+                int index1= r.nextInt(3);
+                int index2= r.nextInt(3);
+                int index3= r.nextInt(3);
+               /* String alphabet = "QWERTYUIOPASDFGHJKLZXCVBNM";
                 for (int i = 0; i < 3; i++) {
                     fio+=alphabet.charAt(r.nextInt(alphabet.length()))+".";
                    // System.out.println(alphabet.charAt(r.nextInt(alphabet.length())));
-                }
+                }*/
                 ContentValues contentValues = new ContentValues();
               //  contentValues.put("id",0);
-                contentValues.put("fio",fio);
+                contentValues.put("name",name[index1]);
+                contentValues.put("secondname",secondname[index2]);
+                contentValues.put("otchestvo",otchestvo[index3]);
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 
                 contentValues.put("datetable",timeStamp);
@@ -75,7 +82,10 @@ public class Lab6Activity extends AppCompatActivity {
                 arrayList=UpdateValue();
                 ContentValues contentValues = new ContentValues();
                 //  contentValues.put("id",0);
-                contentValues.put("fio","I.I.I.");
+                contentValues.put("name","Ivan");
+                contentValues.put("secondname","Ivanov");
+                contentValues.put("otchestvo","Ivanov");
+
                 String where = "id" + "=" + arrayList.get(arrayList.size()-1).id;
                 db.update("classmates",contentValues,where,null);
             }
@@ -103,7 +113,7 @@ public class Lab6Activity extends AppCompatActivity {
         Cursor usercurs = db.rawQuery("select * from classmates",null);
         while(usercurs.moveToNext()){
             Log.d("SQL",usercurs.getString(0)+" "+usercurs.getString(1));
-            arrayList.add(new Classmates(usercurs.getInt(0),usercurs.getString(1),usercurs.getString(2)));
+            arrayList.add(new Classmates(usercurs.getInt(0),usercurs.getString(1),usercurs.getString(2),usercurs.getString(3),usercurs.getString(4)));
         }
         return arrayList;
     }

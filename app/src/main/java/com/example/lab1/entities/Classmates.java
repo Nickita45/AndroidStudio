@@ -4,18 +4,18 @@ import java.io.Serializable;
 
 public class Classmates implements Serializable {
     public int id;
-    public String fio;
+    public String name;
+    public String secondname;
+    public String otchestvo;
     public String date;
 
-    public Classmates(int id,String fio, String date){
+    public Classmates(int id,String name,String secondname,String otchestvo, String date){
         this.id=id;
-        this.fio=fio;
+        this.name=name;
+        this.secondname=secondname;
+        this.otchestvo=otchestvo;
         this.date=date;
 
     }
-    public Classmates(String fio, String date){
-        this.fio=fio;
-        this.date=date;
 
-    }
 }
