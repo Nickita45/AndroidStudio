@@ -17,4 +17,6 @@
         android:id="@+id/item_async"/>
     <item android:title="Lab4AsyncAnimal"
         android:id="@+id/item_animal"/>
+    <item android:title="Lab6"
+        android:id="@+id/item_lab6"/>
 </menu>
